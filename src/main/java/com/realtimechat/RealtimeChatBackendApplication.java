@@ -1,4 +1,4 @@
-package com.realtimechat.demo;
+package com.realtimechat;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
