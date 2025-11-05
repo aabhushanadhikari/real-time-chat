@@ -30,3 +30,20 @@ This project demonstrates asynchronous messaging, real-time delivery, and persis
 
 ## 🗂️ Project Structure
 
+```text
+com.realtimechat
+├── config
+│   ├── rabbitmq
+│   │   ├── MessageProducer.java
+│   │   ├── MessageConsumer.java
+│   │   ├── data/
+│   │   │   └── QueueData.java
+│   │   └── init/
+│   │       ├── ExchangeInit.java
+│   │       ├── QueueInit.java
+│   │       └── BindingInit.java
+│   └── auth/
+├── controller/
+├── entity/
+├── service/
+└── repository/

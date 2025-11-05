@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class QueueInit {
-    private static final String MESSAGE_QUEUE="message_queue";
+    public static final String MESSAGE_QUEUE="message_queue";
 
     @Bean
     public Queue messageQueue(){return new Queue(MESSAGE_QUEUE);}
