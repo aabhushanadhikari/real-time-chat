@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class ExchangeInit {
-    private static final String MESSAGE_EXCHANGE="message_exchange";
+    public static final String MESSAGE_EXCHANGE="message_exchange";
 
     @Bean
     public TopicExchange messageExchange(){return new TopicExchange(MESSAGE_EXCHANGE);}

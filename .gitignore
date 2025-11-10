@@ -17,7 +17,6 @@ target/
 .idea
 *.iws
 *.iml
-*.ipr
 
 ### NetBeans ###
 /nbproject/private/
@@ -31,3 +30,5 @@ build/
 
 ### VS Code ###
 .vscode/
+/src/main/resources/.env
+docker-compose.yml

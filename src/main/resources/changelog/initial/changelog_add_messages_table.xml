@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet id="add-sequence-message-seq" author="AABHUSHANADHIKARI">
+        <createSequence sequenceName="message_seq" startValue="1" incrementBy="1"/>
+    </changeSet>
+    <changeSet id="add-table-message" author="AABHUSHANADHIKARI">
+        <createTable tableName="message">
+            <column name="id" type="BIGINT">
+                <constraints nullable="false" primaryKeyName="pk_message" primaryKey="true"/>
+            </column>
+            <column name="content" type="TEXT"/>
+            <column name="sender" type="VARCHAR"/>
+            <column name="receiver" type="VARCHAR"/>
+            <column name="timestamp" type="timestamp"/>
+            <column name="created_date" type="timestamp"/>
+            <column name="modified_date" type="timestamp"/>
+            <column name="created_by" type="BIGINT"/>
+            <column name="modified_by" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
