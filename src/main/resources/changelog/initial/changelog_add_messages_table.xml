@@ -14,7 +14,6 @@
             <column name="content" type="TEXT"/>
             <column name="sender" type="VARCHAR"/>
             <column name="receiver" type="VARCHAR"/>
-            <column name="timestamp" type="timestamp"/>
             <column name="created_date" type="timestamp"/>
             <column name="modified_date" type="timestamp"/>
             <column name="created_by" type="BIGINT"/>

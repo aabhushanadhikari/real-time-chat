@@ -4,28 +4,31 @@ import com.realtimechat.config.rabbitmq.data.QueueData;
 import com.realtimechat.config.rabbitmq.init.QueueInit;
 import com.realtimechat.entity.Message;
 import com.realtimechat.service.MessageService;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
+@RequiredArgsConstructor
 public class MessageListener {
 
     private final MessageService messageService;
+    private final SimpMessagingTemplate messagingTemplate;
 
-    public MessageListener(MessageService messageService) {
-        this.messageService = messageService;
-    }
+
 
     @RabbitListener(queues = QueueInit.MESSAGE_QUEUE)
-    private void listenMessage(QueueData message){
-        log.info("Received message :{}",message);
-        Message message1= Message.builder()
+    private void listenMessage(QueueData queueData) {
+        log.info("Received message: {}", queueData);
+        Message message = Message.builder()
                 .sender("system")
-                .receiver("reciever")
-                .content(message.getData())
+                .receiver("receiver")
+                .content(queueData.getData())
                 .build();
-        messageService.save(message1);
+        messageService.save(message);
+        messagingTemplate.convertAndSend("/topic/messages", message);
     }
 }
