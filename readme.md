@@ -5,18 +5,18 @@ This project demonstrates asynchronous messaging, real-time delivery, and persis
 
 ---
 
-## 🚀 Features
+##  Features
 
 - User authentication with **JWT**
 - Send and receive messages via **REST API**
 - Real-time message delivery with **STOMP over WebSocket**
 - Message persistence with **PostgreSQL**
 - RabbitMQ **topic/fanout exchanges** for routing messages
-- Optional: group chat, typing indicators, read receipts
+
 
 ---
 
-## 🏗️ Tech Stack
+##  Tech Stack
 
 - **Backend:** Java 17, Spring Boot
 - **Messaging:** RabbitMQ (AMQP)
@@ -25,25 +25,6 @@ This project demonstrates asynchronous messaging, real-time delivery, and persis
 - **Realtime:** WebSocket + STOMP
 - **Documentation:** Swagger/OpenAPI
 - **Build & Deployment:** Maven, Docker
-
+- **Migration:** Liquibase
 ---
 
-## 🗂️ Project Structure
-
-```text
-com.realtimechat
-├── config
-│   ├── rabbitmq
-│   │   ├── MessageProducer.java
-│   │   ├── MessageConsumer.java
-│   │   ├── data/
-│   │   │   └── QueueData.java
-│   │   └── init/
-│   │       ├── ExchangeInit.java
-│   │       ├── QueueInit.java
-│   │       └── BindingInit.java
-│   └── auth/
-├── controller/
-├── entity/
-├── service/
-└── repository/

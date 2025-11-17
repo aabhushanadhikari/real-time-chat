@@ -28,7 +28,7 @@ public class JwtUtil {
         this.key= Keys.hmacShaKeyFor(jwtSecret.getBytes(StandardCharsets.UTF_8));
     }
 
-    private String generateToken(String username){
+    public String generateToken(String username){
         return Jwts.builder()
                 .setSubject(username)
                 .setIssuedAt(new Date())
@@ -37,7 +37,7 @@ public class JwtUtil {
                 .compact();
     }
 
-    private String getUsernameFromToken(String token){
+    public String getUsernameFromToken(String token){
         return Jwts.parserBuilder()
                 .setSigningKey(key).build()
                 .parseClaimsJws(token)
