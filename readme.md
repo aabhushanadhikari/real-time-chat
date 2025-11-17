@@ -28,3 +28,11 @@ This project demonstrates asynchronous messaging, real-time delivery, and persis
 - **Migration:** Liquibase
 ---
 
+## Prerequisites
+
+- Java 17+
+- PostgreSQL
+- RabbitMQ
+- Maven
+- Docker(for rabbitmq)
+
